@@ -76,7 +76,7 @@ export const authMiddleware = async function (c, next) {
             expirationTtl: 600
         }));
 
-        const customPayload = await verifyToken(c, token, JWKS);
+        const customPayload = await verifyToken(c, token, freshJWKS);
         c.set("meta", customPayload);
         await next();
     }
