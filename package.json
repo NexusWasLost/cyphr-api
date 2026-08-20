@@ -1,7 +1,7 @@
 {
-  "name": "keevlt-server",
+  "name": "cyphr-api",
   "version": "1.0.1",
-  "description": "Server side for Webhook Tester",
+  "description": "Api for Cyphr",
   "license": "ISC",
   "author": "",
   "type": "module",
