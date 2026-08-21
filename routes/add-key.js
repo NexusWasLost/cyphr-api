@@ -46,7 +46,8 @@ addkey.post("/add-key", async function (c) {
     ]);
 
     //check if the data was inserted
-    if(res[2].length === 0){
+    const data = res[2];
+    if(data.length === 0){
         throw new HTTPException(402, { message: "LIMIT REACHED of free 10 API Keys !" });
     }
 
@@ -56,7 +57,7 @@ addkey.post("/add-key", async function (c) {
         success: true,
         message: "Key Added Successfully",
         data: {
-            key_id: res[2].key_id,
+            key_id: data.key_id,
             key_name: apiKeyName,
             key_hint: keyHint,
             service_name: serviceName
