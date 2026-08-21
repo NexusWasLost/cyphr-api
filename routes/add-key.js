@@ -57,7 +57,7 @@ addkey.post("/add-key", async function (c) {
         success: true,
         message: "Key Added Successfully",
         data: {
-            key_id: data.key_id,
+            key_id: data[0].key_id,
             key_name: apiKeyName,
             key_hint: keyHint,
             service_name: serviceName
