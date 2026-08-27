@@ -1,6 +1,6 @@
 <div align="center">
 
-[![cyphr_logo_round.png](https://i.postimg.cc/wTLFcnSy/cyphr_logo_round.png)](https://postimg.cc/fJWxMqWD)
+[![cyphr-logo-round.png](https://i.postimg.cc/1t18y0Hk/cyphr-logo-round.png)](https://postimg.cc/v1XYzVCh)
 
 # CYPHR
 
