@@ -3,6 +3,7 @@ import { neon } from "@neondatabase/serverless";
 import { encryptKey } from "../utils/encrypt.js";
 import { createKeyHint } from "../utils/createHint.js";
 import { HTTPException } from "hono/http-exception";
+import { isLikelyValidKey } from "../utils/checkKey.js";
 
 const addkey = new Hono();
 
@@ -12,6 +13,9 @@ addkey.post("/add-key", async function (c) {
     if (!serviceName || !apiKeyName || !apiKeyValue) {
         throw new HTTPException(400, { message: "All fields must be provided" });
     }
+    //check key validity
+    if(!isLikelyValidKey(apiKeyValue))
+        throw new HTTPException(400, { message: "API Key does not seem to be a valid API Key !" });
 
     const meta = c.get("meta");
     if(!meta)
