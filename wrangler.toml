@@ -1,6 +1,6 @@
 name = "cyphr-server"
 main = "app.js"
-compatibility_date = "2026-01-01"
+compatibility_date = "2026-08-22"
 
 [observability]
 enabled = true
@@ -8,6 +8,14 @@ enabled = true
 [[kv_namespaces]]
 binding = "API_CACHE"
 id = "54a140da882b4b2391b14a2037d633b3"
+
+[[ratelimits]]
+name = "RATE_LIMIT"
+namespace_id = "9500"
+
+    [ratelimits.simple]
+    limit = 100
+    period = 60
 
 [vars]
 FREE_CAP = 15

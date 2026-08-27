@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { authMiddleware } from "./middlewares/auth.js";
 import { errorHandler } from "./middlewares/error-handler.js";
+import { rateLimiter } from "./middlewares/rate-limiter.js";
 
 import addkey from "./routes/add-key.js";
 import getkey from "./routes/get-key.js";
@@ -21,6 +22,7 @@ app.use("*", cors({
 }));
 
 app.use("*", authMiddleware);
+app.use("*", rateLimiter);
 
 app.route("/api", addkey);
 app.route("/api", getkey);
