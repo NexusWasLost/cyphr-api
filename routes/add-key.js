@@ -52,7 +52,7 @@ addkey.post("/add-key", async function (c) {
     //check if the data was inserted
     const data = res[2];
     if(data.length === 0){
-        throw new HTTPException(402, { message: "LIMIT REACHED of free 10 API Keys !" });
+        throw new HTTPException(402, { message: "LIMIT REACHED of free 15 API Keys !" });
     }
 
     c.executionCtx.waitUntil(c.env.API_CACHE.delete(`keys:${meta.uid}`));
