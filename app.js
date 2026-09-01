@@ -15,8 +15,8 @@ app.onError(errorHandler);
 
 app.use("*", cors({
     origin: [
-        "https://cyphr.pages.dev",
-        "http://127.0.0.1:5501"
+        "http://127.0.0.1:5501",
+        "http://localhost:5501"
     ],
     allowMethods: ["GET", "POST", "PATCH","DELETE"],
     maxAge: 600
