@@ -43,9 +43,9 @@ addkey.post("/add-key", async function (c) {
         sql.query(`
             INSERT INTO api_keys(user_id, key_name, encrypted_key, key_hint, service_name)
             SELECT $1, $2, $3, $4, $5
-            WHERE (SELECT COUNT(*) FROM api_keys WHERE user_id = $1) < $6
+            WHERE (SELECT COUNT(*) FROM api_keys WHERE user_id = $1) < (SELECT key_limit FROM users WHERE user_id = $1)
             RETURNING key_id;`,
-            [meta.uid, apiKeyName, encryptedAPIKeyValue, keyHint, serviceName, c.env.FREE_CAP]
+            [meta.uid, apiKeyName, encryptedAPIKeyValue, keyHint, serviceName]
         )
     ]);
 
