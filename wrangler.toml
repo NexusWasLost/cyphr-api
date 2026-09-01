@@ -16,6 +16,3 @@ namespace_id = "9500"
     [ratelimits.simple]
     limit = 50
     period = 60
-
-[vars]
-FREE_CAP = 15
